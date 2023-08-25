@@ -39,11 +39,23 @@
 # print("bool to complex:",night," ",type(night), " ",complex(night), " " ,type(complex(night)))
 
 
-comp = 1 + 2j
-# print("complex to int:",comp," ",type(comp), " ",int(comp), " " ,type(int(comp)))
-# print("complex to float:",comp," ",type(comp), " ",float(comp), " " ,type(float(comp)))
-print("complex to str:",comp," ",type(comp), " ",str(comp), " " ,type(str(comp)))
-print("complex to bool:",comp," ",type(comp), " ",bool(comp), " " ,type(bool(comp)))
-print("complex to complex:",comp," ",type(comp), " ",complex(comp), " " ,type(complex(comp)))
+# comp = 1 + 2j
+# # print("complex to int:",comp," ",type(comp), " ",int(comp), " " ,type(int(comp)))
+# # print("complex to float:",comp," ",type(comp), " ",float(comp), " " ,type(float(comp)))
+# print("complex to str:",comp," ",type(comp), " ",str(comp), " " ,type(str(comp)))
+# print("complex to bool:",comp," ",type(comp), " ",bool(comp), " " ,type(bool(comp)))
+# print("complex to complex:",comp," ",type(comp), " ",complex(comp), " " ,type(complex(comp)))
 
 
+# collection
+# list()
+# tuple()
+# set()
+# dict()
+
+
+lst = [7,7,3,2,34,56,6,8,6,3,6]
+print(lst)
+lst = set(lst)
+lst = list(lst)
+print(lst)
