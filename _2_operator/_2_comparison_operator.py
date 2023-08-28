@@ -27,3 +27,4 @@ print("no1 is greater than or equal to num :",greater_or_equal)
 
 lesser_or_equal = no1 <= no2
 print("no1 is less than or equal to num :",lesser_or_equal)
+
