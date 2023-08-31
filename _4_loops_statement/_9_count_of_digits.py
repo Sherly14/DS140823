@@ -1,4 +1,4 @@
-no = int(input("Enter a number : ")) # 345
+no = int(input("Enter a number : ")) # 6345
 
 count = 0
 
@@ -15,9 +15,9 @@ count = 0
 
 # print(count)
 
-while no != 0:
-    no = no // 10 # 34
-    count += 1
+while no != 0:      # 0 != 0
+    no = no // 10   # 634 || 63 || 6 || 0
+    count += 1      # 1   || 2  || 3 || 4
 
 print(count)
 

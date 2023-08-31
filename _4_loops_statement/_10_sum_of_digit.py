@@ -6,3 +6,6 @@ while num > 0 :        # 564 > 0 || 56 > 0 || 5 > 0 || 0 > 0
     sum = sum + digit  # 4       || 10     || 15
     num =  num // 10   # 56      || 5      || 0
 print(sum) 
+
+# int value from user 
+# 754 - 457
