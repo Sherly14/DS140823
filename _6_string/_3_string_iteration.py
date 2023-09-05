@@ -12,5 +12,9 @@ str1 = "Bharati"
 # # t
 # # i
 
-for i in range(len(str1)):
+for i in range(len(str1)): # i = 7
     print(str1[i])
+
+
+# str input from user
+# find it's length without using len()

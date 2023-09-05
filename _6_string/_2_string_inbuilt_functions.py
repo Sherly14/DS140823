@@ -2,6 +2,10 @@ str1 = "Python is a programming language"
 
 print("Orginal : ",str1)
 
+# lst = ["apple","mango","orange"]
+# join_demo = "#".join(lst)
+# print(join_demo)
+
 # is_digit = str1.isdigit()
 # print("Is Digit : ",is_digit)
 
@@ -69,3 +73,5 @@ print("Orginal : ",str1)
 
 # swap_demo = str1.swapcase()
 # print("Swap : ",swap_demo)
+
+
