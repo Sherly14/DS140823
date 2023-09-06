@@ -16,8 +16,25 @@ print("OG : ",lst)
 # lst.pop(8)
 # print("Pop : ",lst)
 
-lst.sort()
-print("Sort : ",lst)
+# lst.sort()
+# print("Sort : ",lst)
 
-lst.sort(reverse=True)
-print("Sort : ",lst)
+# lst.sort(reverse=True)
+# print("Sort : ",lst)
+
+# lst1 = lst.copy()
+# lst1 = lst
+# print("Copy : ",lst1)
+
+# lst.clear()
+# print("Clear : ",lst)
+
+# _count = lst.count(12)
+# print("Count : ",_count)
+
+# _index = lst.index(2)
+# print("Index : ",_index)
+
+
+# size - 5
+# 

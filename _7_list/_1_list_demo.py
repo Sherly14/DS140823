@@ -6,3 +6,4 @@
 # duplicates are allowed
 # mutable (modifiable)
 # ordered - it considers the same order in which you inserted  the value in list
+
