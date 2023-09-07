@@ -50,3 +50,10 @@
 #         break
 # else:
 #     print("Number is NOT present . ")
+
+
+
+
+# size,input,create list
+# sorted the list and return a new list
+# without using sort function
