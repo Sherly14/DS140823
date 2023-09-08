@@ -80,3 +80,10 @@ for i in range(n):
     my_list.append(element)
 largest_value = max(my_list)
 print("The largest value in the list is:", largest_value)
+
+
+# dynamic list
+# reverse it
+
+[6,7,4,1,10]
+[10,1,4,7,6]

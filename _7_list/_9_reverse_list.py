@@ -47,13 +47,13 @@ for i in range(size):
     lst.append(n)
 
 print("og : ",lst)
-left = 0                 #  7
-right = size - 1 # 4     #  9
+left = 0                 #  4
+right = size - 1 # 4     #  8
 
 while left < right:
     lst[left], lst[right] = lst[right], lst[left]
-    left += 1 
-    right -= 1 
+    left += 1    # 1  # 5  # 2
+    right -= 1   # 3  # 3  # 2
 
     print(lst)
 
