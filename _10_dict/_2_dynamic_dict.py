@@ -8,3 +8,7 @@ for i in range(num_pairs):
     my_dict[key] = value
     
 print("Dictionary created:", my_dict)
+
+
+# {"a":100,"b":300,"c":800}
+# 1200
