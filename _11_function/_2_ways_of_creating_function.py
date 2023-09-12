@@ -9,6 +9,13 @@
 # addition()
 
 
+# 1. info() - rno,name,eng,maths,sci
+# 2. total() - total
+# 3. percenatge() - percent
+# 4. grade() - grade
+# 5. display() - display all the data
+
+
 
 
 
