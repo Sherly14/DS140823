@@ -22,7 +22,7 @@
 # def student(address,rno=10,name="Pranay"):
 #     print(f"Rno : {rno} and Name : {name} and Address : {address}")
 
-# student("Mumbai")
+# student("Mumbai",12,"Rahees")
 
 
 
