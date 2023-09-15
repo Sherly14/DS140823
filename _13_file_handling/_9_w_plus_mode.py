@@ -1,0 +1,6 @@
+file =open("testfile.txt","w+")
+file.write("Hello team")
+file.seek(0,0)
+to_read=file.read()
+print(to_read)
+file.close()

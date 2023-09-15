@@ -1,0 +1,6 @@
+file =open("testfile.txt","a+")
+file.write("Good Night!")
+file.seek(0,0)
+to_read=file.read()
+print(to_read)
+file.close()
