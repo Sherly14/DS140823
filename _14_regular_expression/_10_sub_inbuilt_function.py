@@ -10,3 +10,4 @@ import re
 number = "1800 2000 2020"
 res = re.sub("0","",number) 
 print(res)
+
