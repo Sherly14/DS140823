@@ -7,10 +7,11 @@
 # it gets called automatically when the object is created
 
 class demo:
-    def __init__(self,name):
+    def __init__(self,name):             # special kind of method
         print("Constructor1",name)
 
 demo_obj = demo("Bharati")
+
 
 # PVM - Python Virtual Machine
 

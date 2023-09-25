@@ -17,7 +17,6 @@ obj = building()             # created object/instance
 obj.doors()
 obj.windows()
 
-
 # shape - class
 # triangle - methods - take relevant inputs from user and return the area of triangle
 # square - methods - take relevant inputs from user and return the area of square

@@ -4,10 +4,10 @@
 
 
 class student:
-    def info(self):
+    def info(self):                     # instance methods
         self.rno = 90
         self.name = "Bharati"
-
+        
     def display(self):
         print(f"Rno : {self.rno} and Name : {self.name}")
 
