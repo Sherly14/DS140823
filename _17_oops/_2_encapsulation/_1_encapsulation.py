@@ -19,7 +19,18 @@ class Car:
     
     def set_mileage(self,mileage):
         self.mileage = mileage
+        
+    def get_engine(self):
+        return self.engine
+    
+    def set_engine(self,engine):
+        self.engine = engine
 
+    def get_brand(self):
+        return self.brand
+    
+    def set_brand(self,brand):
+        self.brand = brand
 
 obj = Car("Petrol Engine","BMW","35km/l")
 data = obj.display()
@@ -34,5 +45,13 @@ obj.set_mileage("50km/l")
 
 mil = obj.get_mileage()
 print("Mileage : ",mil)
+
+brand = obj.get_brand()
+print("Brand : ",brand)
+
+obj.set_brand("Audi")
+
+brand = obj.get_brand()
+print("Brand : ",brand)
 
 
