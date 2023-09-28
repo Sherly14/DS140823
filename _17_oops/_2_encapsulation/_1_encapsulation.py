@@ -10,7 +10,7 @@ class Car:
         self.brand = brand
         self.mileage = mileage
 
-    def display(self):
+    def __str__(self):
         return f"Engine : {self.engine} \nBrand : {self.brand} \nMileage : {self.mileage}"
     
     # setter and getter
@@ -33,8 +33,7 @@ class Car:
         self.brand = brand
 
 obj = Car("Petrol Engine","BMW","35km/l")
-data = obj.display()
-print(data)
+print("OBJ : ",obj)
 
 print()
 

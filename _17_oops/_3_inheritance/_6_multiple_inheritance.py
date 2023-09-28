@@ -7,7 +7,7 @@ class C:
     def language(self):
         print("C")
 
-class Cpp:
+class Cpp(object):
     def oops_feature(self):
         print("C++ is object oriented language")
 
