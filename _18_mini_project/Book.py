@@ -8,7 +8,7 @@ class book:
         self.bookPrice =bookPrice
 
     def __str__(self):
-        return f"bookid: {self.bookId} \n bookName: {self.bookName} \n bookAuthor: {self.bookAuthor} \n bookEditor: {self.bookEditor} \n bookPublisher: {self.bookPublisher} \n bookPrice: {self.bookPrice}"
+        return f"Book ID: {self.bookId} \nBook Name: {self.bookName} \nBook Author: {self.bookAuthor} \nBook Editor: {self.bookEditor} \nBook Publisher: {self.bookPublisher} \nBook Price: {self.bookPrice}"
 
     def get_bookId (self):
         return self.bookId
@@ -43,6 +43,6 @@ class book:
     def set_publisher (self,bookPublisher):
         self.bookPublisher =bookPublisher
 
-    def set_bookId (self,bookPrice):
+    def set_price (self,bookPrice):
         self.bookPrice =bookPrice  
         
