@@ -36,6 +36,24 @@ class array:
         else:
             print("Index out of range")
 
+    def remove(self,element):
+        if element in self.lst:
+            self.lst.remove(element)
+        else:
+            print("Element is not in list")
+
+    def element_at_index(self,index,element):
+        if index <= self.fix_size:
+           self.lst.insert(index,element)
+        else:
+            print("Index out of range")
+
+    def arr_len(self):
+        return len(self.lst)
+
+    def arr_copy(self):
+       return self.lst.copy()
+
 arr = array(3)
 arr.add(8)
 arr.add(7)
@@ -44,7 +62,21 @@ arr.add(2)
 data = arr.get()
 print(data)
 
-arr.remove(1)
+arr.pop_element(1)
 
 data = arr.get()
 print(data)
+
+arr.remove(2)
+
+data = arr.get()
+print(data)
+
+length = arr.arr_len()
+print(length)
+
+arr.element_at_index(0,10)
+
+data = arr.get()
+print(data)
+
