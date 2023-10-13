@@ -13,6 +13,27 @@ class linkedlist:
         self.head = new_node            # data = 10, link = None || data = 20
         self.ctr += 1 
 
+    def appendleft(self,data):
+        new_node=node(data,None)
+        if self.head is None:
+            self.head=new_node   # 3 - None
+            self.tail=new_node   # 3 - 1000
+        else:
+            self.tail.link=new_node
+            self.tail=new_node   # 4 - None
+        self.ctr += 1
+
+    # def appendleft(self,data):
+    #     itr=self.head
+    #     newnode=node(data,None)
+    #     if self.head==None:
+    #         self.append(data)
+    #     else:
+    #         while itr.link :
+    #             itr=itr.link
+    #         itr.link=newnode
+    #         self.ctr+=1
+
     def display(self):
         itr = self.head
         while itr:
@@ -77,21 +98,26 @@ class linkedlist:
 
 obj = linkedlist()
 
-print("Is_empty : ", obj.is_empty())
-
-obj.append(10)
-obj.append(20)
-obj.append(30)
-obj.append(40)
+obj.appendleft(10)
+obj.appendleft(20)
+obj.appendleft(30)
 obj.display()
 
-print()
 # print("Is_empty : ", obj.is_empty())
 
-# print("Length : ",obj.length())
+# obj.append(10)
+# obj.append(20)
+# obj.append(30)
+# obj.append(40)
+# obj.display()
 
-# obj.remove(1)
+# print()
+# # print("Is_empty : ", obj.is_empty())
 
-obj.insert(2,100)
+# # print("Length : ",obj.length())
 
-obj.display()
+# # obj.remove(1)
+
+# obj.insert(2,100)
+
+# obj.display()
