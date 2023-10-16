@@ -12,3 +12,9 @@ print(palindrome(string))
 
 string = "edyoda"
 string[1:-1]
+
+
+"2+3"
+"+23"
+"23+"
+

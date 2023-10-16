@@ -21,5 +21,8 @@ class string():
 obj = string()
 
 
+# bharatibh
+# r
+
 obj.input_strings()
 obj.are_rotations()

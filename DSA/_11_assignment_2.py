@@ -28,3 +28,13 @@ for i in range(size):
     
 reverse(list1)
 print(list1)
+
+
+
+str1 = arti 
+str2 = tiar
+
+str2 is rotation of str1
+arti
+
+tiar
