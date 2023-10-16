@@ -26,15 +26,11 @@ lst = [6,4,1,5,89,12,3,45,67,12,3]
 
 
 
-
-
 # 2. Linear Time : O(n)
 
 n = 11000
 for i in range(n):
     print(i)
-
-
 
 
 
