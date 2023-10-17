@@ -21,12 +21,14 @@ if __name__ == "__main__":
     rows = int(input("Enter the number of rows : "))
     cols = int(input("Enter the number of seats in each rows : "))
 
-    choice = int(input("Enter \n1.Show the seats \n2.Buy a ticket \n3.Statistics \n4.Show booked ticket's user info \n0.Exit : \n"))
-
     movie_obj = movie_ticket(rows,cols)
-
     obj = Main()
-    obj.execute(choice)
+    
+    while True:
+        choice = int(input("Enter \n1.Show the seats \n2.Buy a ticket \n3.Statistics \n4.Show booked ticket's user info \n0.Exit : \n"))
+        obj.execute(choice)
+    
+    
 
     
 
