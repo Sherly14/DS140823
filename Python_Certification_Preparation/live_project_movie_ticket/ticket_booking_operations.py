@@ -4,6 +4,7 @@ class movie_ticket:
         self.rows = rows
         self.columns = columns
         self.user_details = {}
+        self.income = 0
 
     def show_seats(self):
         for i in range(self.rows+1):
@@ -23,11 +24,22 @@ class movie_ticket:
     def buy_ticket(self):
         row = int(input('Enter row number : '))
         col = int(input('Enter the column number : '))
+
+        total_seats = self.rows * self.columns
+
+        if total_seats <= 60:
+            price = 10
+        else:
+            if row <= (self.rows//2):
+                price = 10
+            else:
+                price = 8
+
         # for data in self.details:
         #     if data['row'] == row and data['column'] == col:
         #         print("This seat is already booked. Please choose another seat.")
         #         return False
-        price=10
+        
         # if self.rows*self.columns>60:
         #     if row >=self.rows/2:
         #         price=8
@@ -39,14 +51,36 @@ class movie_ticket:
             phno=int(input('Enter your Phone Number : '))
             seat_no = str(row) + str(col)
             self.user_details[seat_no] = {'name':name,'gender':gender,'age':age,'phoneno':phno,'price':price}
-            # self.price+=price
+            self.income += price
             print("Booked Successfully")
         else:
             print("No Problem! Thank You for connecting with Book My Show!")
             return
 
     def statistics(self):
-        pass
+        total_seats = self.rows * self.columns # 9 8
+        purchased_ticket = len(self.user_details)
+        purchased_tkt_per = (purchased_ticket / total_seats) * 100
+        total_income = 0
+
+        if total_seats > 60:
+            front_price = 10
+            back_price  = 8
+            front_seats = (self.rows // 2) * self.columns
+            back_seats = total_seats - front_seats
+            total_income  = front_seats * front_price + back_seats * back_price
+
+            # temp=(self.rows*self.columns)*10
+            # t2=self.rows//2
+            # t1=temp-(t2*self.columns)*2
+            # total+=t1
+        else:
+            total_income = total_seats * 10
+
+        print('Number of Purchased Tickets : ',purchased_ticket)
+        print('Percentage of Tickets booked',purchased_tkt_per)
+        print('Current Income : ',self.income)
+        print("Total Income : ",total_income)
 
     def user_info(self):
         pass
