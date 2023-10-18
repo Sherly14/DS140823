@@ -17,9 +17,17 @@ class movie_ticket:
                 elif j == 0:
                     print(i, end=" ")
                 else:
-                    print("S", end = " ")
-            
+                    seat_no = str(i) + str(j)
+                    if seat_no in self.user_details:
+                        print("B", end=" ")
+                    else:
+                        print("S", end=" ")
             print()
+
+    # def show_seats(self):
+    #     print("  " + " ".join(map(str, range(1, self.seats_per_row + 1))))
+    #     for row_number, row in enumerate(self.seating_plan, start=1):
+    #         print(f"{row_number} {' '.join(row)}")
 
     def buy_ticket(self):
         row = int(input('Enter row number : '))
@@ -35,20 +43,12 @@ class movie_ticket:
             else:
                 price = 8
 
-        # for data in self.details:
-        #     if data['row'] == row and data['column'] == col:
-        #         print("This seat is already booked. Please choose another seat.")
-        #         return False
-        
-        # if self.rows*self.columns>60:
-        #     if row >=self.rows/2:
-        #         price=8
         ch=int(input(f'Price of the ticket is Rs.{price}. Please press 1 to Confirm or press 0 to Cancel : \n'))
         if ch == 1:
             name=input('Enter your Name : ')
             gender=input('Enter your Gender : ')
             age=int(input('Enter your Age : '))
-            phno=int(input('Enter your Phone Number : '))
+            phno=int(input('Enter your Phone Number : ')) # 320 + 320
             seat_no = str(row) + str(col)
             self.user_details[seat_no] = {'name':name,'gender':gender,'age':age,'phoneno':phno,'price':price}
             self.income += price
@@ -69,11 +69,6 @@ class movie_ticket:
             front_seats = (self.rows // 2) * self.columns
             back_seats = total_seats - front_seats
             total_income  = front_seats * front_price + back_seats * back_price
-
-            # temp=(self.rows*self.columns)*10
-            # t2=self.rows//2
-            # t1=temp-(t2*self.columns)*2
-            # total+=t1
         else:
             total_income = total_seats * 10
 
@@ -83,5 +78,18 @@ class movie_ticket:
         print("Total Income : ",total_income)
 
     def user_info(self):
-        pass
+        row,column=map(int,input("Please Enter the row and column : ").split(","))
+        seat_no=str(row)+str(column)
+
+        if seat_no in self.user_details:
+            user_data = self.user_details[seat_no]
+            print(f"Name : {user_data['name']}")
+            print(f"Gender : {user_data['gender']}")
+            print(f"Age : {user_data['age']}")
+            print(f"TicketPrice : {user_data['price']}")
+            print(f"PhoneNumber : {user_data['phoneno']}")
+        else:
+            print("The seat you have chosen not occupied by anyone")
         
+
+# CRUD - Create, Read, Update, Delete
