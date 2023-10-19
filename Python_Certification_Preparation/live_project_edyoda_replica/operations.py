@@ -1,13 +1,25 @@
 import json
 
-def register(filename,student_id,name,mobile,email,password):
+def register(filename,id,name,mobile,email,password):
     details = {
-        "ID ": student_id,
+        "ID ": id,
         "Name ": name,
         "Mobile No. ": mobile,
         "Email" : email,
         "Password" : password
     }
 
-    with open(filename,"w") as file:
-        json.dump(details,file)
+    with open(filename,"r+") as file:
+        try:
+            data = json.load(file)
+            if details not in data:
+                data.append(details)
+                file.seek(0)
+                file.truncate() # clear the file
+                json.dump(data,file)
+                return True
+        except Exception as ex:
+            return False
+
+def login():
+    pass

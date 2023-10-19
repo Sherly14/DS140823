@@ -68,3 +68,69 @@ class edyoda():
                     if res:
                         print(pass_word,"is valid and strong")
                     else:
+                    print("Exit")
+                  
+
+        elif choice == 2:
+            print("*******Register******")
+            reg_choice = int(input("1.Register as Admin \n2.Register as student \n3.Exit\n"))
+            if reg_choice == 1:
+                    print("$$$$$Register as Admin$$$$$$")
+            elif reg_choice == 2:
+                    print("$$$$$Register as student$$$$$")
+            else:
+                    print("Exit")
+    
+        else:
+            print("Exit")
+
+
+if __name__ == "__main__":
+  edyoda_instance = edyoda()
+while True:
+
+    choice = int(input("Enter \n1.Login \n2.Register \n3.Exit\n"))
+    edyoda_instance.execute(choice)
+                         
+
+# Vinu
+from edyoda import EdyodaUserManager
+
+def main():
+    user_manager = EdyodaUserManager()
+
+    while True:
+        print("\nMain Menu:")
+        print("1. Login")
+        print("2. Register")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            login_role = input("Log in as admin or student: ")
+            if login_role not in ["admin", "student"]:
+                print("Invalid choice.")
+            else:
+username = input("Username: ")
+                password = input("Password: ")
+                try:
+                    user_id = user_manager.login(username, password, login_role)
+                    print(f"User ID: {user_id}")
+                except Exception as e:
+                    print(f"Login failed: {e}")
+        elif choice == "2":
+            register_role = input("Register as admin or student: ")
+            if register_role not in ["admin", "student"]:
+                print("Invalid choice.")
+            else:
+                user_id = user_manager.register(register_role)
+                print(f"User ID: {user_id}")
+        elif choice == "3":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
