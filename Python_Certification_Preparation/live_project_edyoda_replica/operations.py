@@ -76,26 +76,81 @@ def add_module(filename,module_ID,module_name,start_date,end_date,module_topic):
             return False
         
 
-def view_module():
+def view_module(filename):
     try:
-        with open('Module.json','r') as rawdata:
+        with open(filename,'r') as rawdata:
             try:
                 data=json.load(rawdata)
+                return data
             except json.decoder.JSONDecodeError as je:
                 print("No data in file !")
-            for i in data:
-                print('Module ID : ',i['ID '])
-                print('Module Name : ',i['Module Name '])
-                print('Module Start Date : ',i['Start Date '])
-                print('Module End Date : ',i['End Date '])
-                ctr =0
-                for topic in i['Module Topic']:
-                    ctr+=1
-                    print(f'Module Topic {ctr} : ',topic)
-                print()
     except:
         print('no file found')
 
 
-def update_module():
-    pass
+# def update_module(moudleid,start_date,end_date,module_topic:list):
+#     data = view_module()
+#     if not data:
+#         print('No Modules Present ! Create Module first')
+#     else:
+#         for i in data:
+#             if i['ID ']==moudleid:
+#                 module_ID=i['ID ']
+#                 module_name=i['Module Name ']
+#                 data.remove(i)
+#                 details = {
+#                         "ID ": module_ID,
+#                         "Module Name ": module_name,
+#                         "Start Date ": start_date,
+#                         "End Date " : end_date,
+#                         "Module Topic" : module_topic
+#                      }
+#                 data.append(details)
+#                 with open('Module.json','w')as rfile:
+#                     try:
+#                         json.dump(data,rfile)
+#                     except json.decoder.JSONDecodeError as e:
+#                         try:
+#                             ch=int(input('no modules found! press 1 to add one  ')) 
+#                             if ch==1:
+#                                 module_flag = add_module("Module.json",module_ID,module_name,start_date,end_date,module_topic)
+#                                 print("Successfully Added!!!") if module_flag else print("Module Adding Failed!!!")
+#                             else:
+#                                 return False
+#                         except:
+#                             print("no modules found! plz check file ")
+#                 print("Successfully Added!!!") if 1==1 else print("Module Adding Failed!!!")       
+#                 break
+
+
+def update_module(filename,module_ID,module_name,start_date,end_date,module_topic):
+    file = open(filename,"r+")
+    data = json.load(file)
+    for i in range(len(data)):
+        if data[i]["ID "] == module_ID:
+            data[i]["Module Name "] = data[i]["Module Name "]
+            data[i]["Start Date "] = start_date
+            data[i]["End Date "] = end_date
+            data[i]["Module Topic"].extend(module_topic)
+            file.seek(0)
+            file.truncate()
+            json.dump(data,file,indent=4)
+            file.close()
+            return True
+    else:
+        add_module(filename,module_ID,module_name,start_date,end_date,module_topic)  
+    return False
+
+
+def delete_module(filename,module_ID):
+    file = open(filename,"r+")
+    data = json.load(file)
+    for i in range(len(data)):
+        if data[i]["ID "] == module_ID:
+            data.pop(i)
+            file.seek(0)
+            file.truncate()
+            json.dump(data,file,indent=4)
+            file.close()
+            return True
+    return False

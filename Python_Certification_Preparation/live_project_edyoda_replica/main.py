@@ -1,4 +1,4 @@
-from operations import register,login,add_module,view_module
+from operations import register,login,add_module,view_module,update_module,delete_module
 import random
 import re
 
@@ -53,14 +53,39 @@ if __name__ == "__main__":
 
                         elif admin_choice == 2:
                             print("*****************View Module******************")
-                            view_module()
+                            data = view_module("Module.json")
+                            for i in data:
+                                print('Module ID : ',i['ID '])
+                                print('Module Name : ',i['Module Name '])
+                                print('Module Start Date : ',i['Start Date '])
+                                print('Module End Date : ',i['End Date '])
+                                ctr = 0
+                                for topic in i['Module Topic']:
+                                    ctr+=1
+                                    print(f'Module Topic {ctr} : ',topic)
+                                print()
 
                         elif admin_choice == 3:
                             print("*****************Update Module******************")
-                            update_module()
+                            module_ID =  int(input("Enter Module ID : "))
+                            module_name = input("Enter Module Name : ")
+                            start_date = input("Enter start date : ")
+                            end_date = input("Enter end date : ")
+                            
+                            size = int(input("Enter total topics you want to add : "))
+                            module_topic = []
+                            for i in range(size):
+                                topic = input("Enter topic : ")
+                                module_topic.append(topic)
+
+                            update_flag = update_module("Module.json",module_ID,module_name,start_date,end_date,module_topic)
+                            print("Successfully Updated!!!") if update_flag else print("Module Updation Failed!!!")
 
                         elif admin_choice == 4:
-                            pass
+                            print("*****************Delete Module******************")
+                            module_ID =  int(input("Enter Module ID : "))
+                            delete_flag = delete_module("Module.json",module_ID)
+                            print("Successfully Deleted!!!") if delete_flag else print("Module Deletion Failed!!!")
                         else:
                             exit(1)
 
