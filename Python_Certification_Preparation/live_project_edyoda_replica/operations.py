@@ -77,4 +77,25 @@ def add_module(filename,module_ID,module_name,start_date,end_date,module_topic):
         
 
 def view_module():
+    try:
+        with open('Module.json','r') as rawdata:
+            try:
+                data=json.load(rawdata)
+            except json.decoder.JSONDecodeError as je:
+                print("No data in file !")
+            for i in data:
+                print('Module ID : ',i['ID '])
+                print('Module Name : ',i['Module Name '])
+                print('Module Start Date : ',i['Start Date '])
+                print('Module End Date : ',i['End Date '])
+                ctr =0
+                for topic in i['Module Topic']:
+                    ctr+=1
+                    print(f'Module Topic {ctr} : ',topic)
+                print()
+    except:
+        print('no file found')
+
+
+def update_module():
     pass

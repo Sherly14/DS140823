@@ -1,4 +1,4 @@
-from operations import register,login,add_module
+from operations import register,login,add_module,view_module
 import random
 import re
 
@@ -36,6 +36,7 @@ if __name__ == "__main__":
                         admin_choice = int(input("Enter \n1.Create Module \n2.View Module \n3.Update Module \n4.Delete Module \n5.Exit : \n"))
 
                         if admin_choice == 1:
+                            print("*****************Create Module******************")
                             module_ID = random.randint(1, 10000)
                             module_name = input("Enter Module Name : ")
                             start_date = input("Enter start date : ")
@@ -44,17 +45,20 @@ if __name__ == "__main__":
                             size = int(input("Enter total topics you want to add : "))
                             module_topic = []
                             for i in range(size):
-                                topic = input("Enter topic :")
+                                topic = input("Enter topic : ")
                                 module_topic.append(topic)
 
                             module_flag = add_module("Module.json",module_ID,module_name,start_date,end_date,module_topic)
                             print("Successfully Added!!!") if module_flag else print("Module Adding Failed!!!")
 
                         elif admin_choice == 2:
+                            print("*****************View Module******************")
                             view_module()
 
                         elif admin_choice == 3:
-                            pass
+                            print("*****************Update Module******************")
+                            update_module()
+
                         elif admin_choice == 4:
                             pass
                         else:
