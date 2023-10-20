@@ -48,10 +48,11 @@ if __name__ == "__main__":
                                 module_topic.append(topic)
 
                             module_flag = add_module("Module.json",module_ID,module_name,start_date,end_date,module_topic)
-                            print("Successfully Added!!!") if register_flag else print("Module Adding Failed!!!")
+                            print("Successfully Added!!!") if module_flag else print("Module Adding Failed!!!")
 
                         elif admin_choice == 2:
-                            pass
+                            view_module()
+
                         elif admin_choice == 3:
                             pass
                         elif admin_choice == 4:

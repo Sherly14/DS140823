@@ -1,4 +1,5 @@
 import json
+import os
 
 def register(filename,id,name,mobile,email,password):
     details = {
@@ -9,7 +10,9 @@ def register(filename,id,name,mobile,email,password):
         "Password" : password
     }
 
-    with open(filename,"w+") as file:
+    if not os.path.exists(filename):
+        open(filename,"x")
+    with open(filename,"r+") as file:
         try:
             data = json.load(file)
             if details not in data:
@@ -51,7 +54,9 @@ def add_module(filename,module_ID,module_name,start_date,end_date,module_topic):
         "Module Topic" : module_topic
     }
 
-    with open(filename,"w+") as file:
+    if not os.path.exists(filename):
+        open(filename,"x")
+    with open(filename,"r+") as file:
         try:
             data = json.load(file)
             if details not in data:
@@ -69,3 +74,7 @@ def add_module(filename,module_ID,module_name,start_date,end_date,module_topic):
         
         except Exception as ex:
             return False
+        
+
+def view_module():
+    pass
